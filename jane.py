@@ -34,6 +34,13 @@ class Jane(chatbot.ChatBot):
         #Send welcome message
         c.send("Where is Mr. House?")
 
+    def on_message(self, c, e):
+ 
+        #Info command
+        if e.text == "$info":
+
+            c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
+
 #Gather setup info
 username = raw_input("Username: ")
 password = getpass.getpass("Password: ")
