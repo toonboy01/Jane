@@ -88,9 +88,9 @@ Setup
 Gather login information and pass it
 to the required class methods
 """
-username = ""
-password = ""
-subdomain = ""
+username = raw_input("Username: ")
+password = getpass.getpass("Password: ")
+subdomain = raw_input("Subdomain: ")
 
 #Site URL
 wiki = "http://" + subdomain + ".wikia.com"
