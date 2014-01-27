@@ -28,6 +28,20 @@ Wiki commands
 These functions are called by the bot and perform 
 site tasks.
 """
+def query_user(user):
+
+    """
+    See if a user is in a certain rights group
+    """
+    for name in sysops:
+    
+        if name == user:
+        
+            return True
+        else:
+        
+            return False
+            
 """
 Chat bot
 This class contains all of the code needed to operate 
@@ -46,9 +60,6 @@ class Jane(chatbot.ChatBot):
         c.send("Hello, I have come back online.")
 
     def on_message(self, c, e):
- 
-        #Get list of admins
-        sysops = tybot.get_users_by_group("sysop")
         
         if e.text == "$info":
 
@@ -59,7 +70,7 @@ class Jane(chatbot.ChatBot):
         if e.text == "$source":
         
             c.send("My source can be loacted here: https://github.com/DoctorWhooves/Jane")
-        if sysops.index(e.user) > -1 or e.user == "Lil' Miss Rarity":
+        if query_user(e.user) == True or e.user == "Lil' Miss Rarity":
         
             if e.text == "$test":
             
