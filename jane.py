@@ -57,7 +57,7 @@ class Jane(chatbot.ChatBot):
     def on_welcome(self, c, e):
 
         #Send welcome message
-        c.send("Hello, I have come back online.")
+        c.send("-ss-")
 
     def on_message(self, c, e):
         
