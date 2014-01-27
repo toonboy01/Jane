@@ -54,28 +54,18 @@ class Jane(chatbot.ChatBot):
         if e.text == "$love":
         
             c.send("I love you " + e.user + " ~<3")
-
-        if e.text == "$test-api":
-
-            text = "== Test: " + e.user + "== <br /> Alo!"
-            result = message(text)
-
-            if result == True:
-
-                c.send("Success!")
-            else:
-
-                c.send("Fuck...")
-
+        if e.text == "$source":
+        
+            c.send("My source can be loacted here: https://github.com/DoctorWhooves/Jane")
 
 """
 Setup
 Gather login information and pass it
 to the required class methods
 """
-username = raw_input("Username: ")
-password = getpass.getpass("Password: ")
-subdomain = raw_input("Wiki: ")
+username = ""
+password = ""
+subdomain = ""
 
 #Site URL
 wiki = "http://" + subdomain + ".wikia.com"
