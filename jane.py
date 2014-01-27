@@ -23,15 +23,17 @@ import tybot
 import chatbot
 import getpass
 
-#Test message
-def message(text):
-
-    page = tybot.get_page_content("User talk:Quality Control")
-    page = page + "" + text
-    result = tybot.edit("User talk:Quality Control", text, "Test")
-
-    return result
-
+"""
+Wiki commands
+These functions are called by the bot and perform 
+site tasks.
+"""
+"""
+Chat bot
+This class contains all of the code needed to operate 
+the chat aspect of the bot. It also calls functions
+from Wiki comands
+"""
 class Jane(chatbot.ChatBot):
 
     def __init__(self, username, password, site):
@@ -41,7 +43,7 @@ class Jane(chatbot.ChatBot):
     def on_welcome(self, c, e):
 
         #Send welcome message
-        c.send("Where is Mr. House?")
+        c.send("Hello, I have come back online.")
 
     def on_message(self, c, e):
  
@@ -49,6 +51,9 @@ class Jane(chatbot.ChatBot):
         if e.text == "$info":
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
+        if e.text == "$love":
+        
+            c.send("I love you " + e.user + " ~<3")
 
         if e.text == "$test-api":
 
@@ -62,7 +67,12 @@ class Jane(chatbot.ChatBot):
 
                 c.send("Fuck...")
 
-#Gather setup info
+
+"""
+Setup
+Gather login information and pass it
+to the required class methods
+"""
 username = raw_input("Username: ")
 password = getpass.getpass("Password: ")
 subdomain = raw_input("Wiki: ")
