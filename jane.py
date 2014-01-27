@@ -36,11 +36,15 @@ def query_user(user):
     """
     global sysops
 
+    #debug
+    print sysops
+
     for name in sysops:
     
         if name == user:
         
             return True
+            print "true"
         else:
         
             return False
@@ -101,6 +105,9 @@ tybot = tybot.tybot(username, password, api)
 
 #Get list of admins
 sysops = tybot.get_users_by_group("sysop")
+
+#debug
+print sysops
 
 #Start chatbot
 if __name__ == "__main__":
