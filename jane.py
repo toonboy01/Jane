@@ -22,7 +22,7 @@
 import tybot
 import chatbot
 import getpass
-import system
+import sys
 
 """
 Wiki commands
