@@ -73,11 +73,11 @@ class Jane(chatbot.ChatBot):
         if e.text == "$source":
         
             c.send("My source can be loacted here: https://github.com/DoctorWhooves/Jane")
+        if e.text == "$rules":
+
+            c.send("Please read the [[Fallout Wiki:Chat#Chat_rules|chat rules]]")
         if query_user(e.user) == True or e.user == "Lil' Miss Rarity":
         
-            if e.text == "$test":
-            
-                c.send("This is a sysop only command!")
             if e.text == "$quit":
 
                 c.send("Now exiting...")
