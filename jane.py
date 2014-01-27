@@ -57,6 +57,11 @@ class Jane(chatbot.ChatBot):
         if e.text == "$source":
         
             c.send("My source can be loacted here: https://github.com/DoctorWhooves/Jane")
+        if e.user in sysops or e.user == "Lil' Miss Rarity":
+        
+            if e.text == "$test":
+            
+                c.send("This is a sysop only command!")
 
 """
 Setup
@@ -79,3 +84,6 @@ if __name__ == "__main__":
 
     jane = Jane(username, password, wiki)
     jane.start()
+
+#Get list of admins
+sysops = tybot.get_users_by_group("sysop")
