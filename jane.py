@@ -27,7 +27,7 @@ class Jane(chatbot.ChatBot):
 
     def __init__(self, username, password, site):
 
-        chatbot.ChatBot__init__(self, username, password, site)
+        chatbot.ChatBot.__init__(self, username, password, site)
 
 #Gather setup info
 username = raw_input("Username: ")
