@@ -38,9 +38,11 @@ def query_user(user):
 
     #debug
     print sysops
+    print user
 
     for name in sysops:
     
+        print name
         if name == user:
         
             return True
