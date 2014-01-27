@@ -26,7 +26,7 @@ import getpass
 #Test message
 def message(text):
 
-    page = tybot.get_page_contents("User talk:Quality Control")
+    page = tybot.get_page_content("User talk:Quality Control")
     page = page + "" + text
     result = tybot.edit("User talk:Quality Control", text, "Test")
 
