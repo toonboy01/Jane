@@ -22,6 +22,7 @@
 import tybot
 import chatbot
 import getpass
+import system
 
 """
 Wiki commands
@@ -33,6 +34,8 @@ def query_user(user):
     """
     See if a user is in a certain rights group
     """
+    global sysops
+
     for name in sysops:
     
         if name == user:
@@ -75,6 +78,10 @@ class Jane(chatbot.ChatBot):
             if e.text == "$test":
             
                 c.send("This is a sysop only command!")
+            if e.text == "$quit":
+
+                c.send("Now exiting...")
+                sys.exit()
 
 """
 Setup
