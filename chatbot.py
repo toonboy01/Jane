@@ -10,10 +10,10 @@ import requests
 __version__ = '1.4.6b'
 
 class Event(object):
-    def __init__(self, connection):
+        def __init__(self, connection):
 		self.connection = self.parse(connection)
 
-	def parse(self, connection):
+        def parse(self, connection):
 		returned = {}
 		if connection["event"] == "join":
 			connection["data"] = json.loads(connection["data"])
