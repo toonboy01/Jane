@@ -29,6 +29,11 @@ class Jane(chatbot.ChatBot):
 
         chatbot.ChatBot.__init__(self, username, password, site)
 
+    def on_welcome(self, c, e):
+
+        #Send welcome message
+        c.send("Where is Mr. House?")
+
 #Gather setup info
 username = raw_input("Username: ")
 password = getpass.getpass("Password: ")
