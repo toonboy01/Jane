@@ -23,6 +23,15 @@ import tybot
 import chatbot
 import getpass
 
+#Test message
+def message(text):
+
+    page = tybot.get_page_contents("User talk:Quality Control")
+    page = page + "" + text
+    result = tybot.edit("User talk:Quality Control", text, "Test")
+
+    return result
+
 class Jane(chatbot.ChatBot):
 
     def __init__(self, username, password, site):
@@ -41,6 +50,18 @@ class Jane(chatbot.ChatBot):
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
 
+        if e.text == "$test-api":
+
+            text = "== Test: " + e.user + "== <br /> Alo!"
+            result = message(text)
+
+            if result == True:
+
+                c.send("Success!")
+            else:
+
+                c.send("Fuck...")
+
 #Gather setup info
 username = raw_input("Username: ")
 password = getpass.getpass("Password: ")
@@ -48,7 +69,12 @@ subdomain = raw_input("Wiki: ")
 
 #Site URL
 wiki = "http://" + subdomain + ".wikia.com"
+api = wiki + "/api.php"
 
+#New Tybot object
+tybot = tybot.tybot(username, password, api)
+
+#Start chatbot
 if __name__ == "__main__":
 
     jane = Jane(username, password, wiki)
