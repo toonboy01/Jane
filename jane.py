@@ -47,7 +47,9 @@ class Jane(chatbot.ChatBot):
 
     def on_message(self, c, e):
  
-        #Info command
+        #Get list of admins
+        sysops = tybot.get_users_by_group("sysop")
+        
         if e.text == "$info":
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
@@ -57,7 +59,7 @@ class Jane(chatbot.ChatBot):
         if e.text == "$source":
         
             c.send("My source can be loacted here: https://github.com/DoctorWhooves/Jane")
-        if e.user in sysops or e.user == "Lil' Miss Rarity":
+        if sysops.index(e.user) > -1 or e.user == "Lil' Miss Rarity":
         
             if e.text == "$test":
             
@@ -79,11 +81,11 @@ api = wiki + "/api.php"
 #New Tybot object
 tybot = tybot.tybot(username, password, api)
 
+#Get list of admins
+sysops = tybot.get_users_by_group("sysop")
+
 #Start chatbot
 if __name__ == "__main__":
 
     jane = Jane(username, password, wiki)
     jane.start()
-
-#Get list of admins
-sysops = tybot.get_users_by_group("sysop")
