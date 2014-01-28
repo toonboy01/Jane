@@ -69,7 +69,7 @@ class Jane(chatbot.ChatBot):
         if e.text == "$info":
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
-        if e.text startswith("$lookup"):
+        if e.text.startswith("$lookup"):
 
             user = e.text.replace("$lookup ", "")
             
