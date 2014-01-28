@@ -90,9 +90,9 @@ class Jane(chatbot.ChatBot):
 
             i = e.text.replace("$rule ", "")
             i = int(i)
-            i = i - 1
 
             rules = [
+                "Please do not do rule 0.",
                 "Personal attacks, harassment, sexual harassment, insults or bullying.",
                 "Racial bigotry, sexually degrading language, or other hate speech.",
                 "Extreme use of profanity/cursing or directing it towards another user is not permitted.",
