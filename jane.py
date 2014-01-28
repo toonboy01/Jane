@@ -94,7 +94,7 @@ class Jane(chatbot.ChatBot):
             if i > 9 or i < 0:
 
                 c.send("No rule at this index!")
-
+                return
             rules = [
                 "Personal attacks, harassment, sexual harassment, insults or bullying.",
                 "Racial bigotry, sexually degrading language, or other hate speech.",
