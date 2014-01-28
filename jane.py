@@ -69,15 +69,21 @@ class Jane(chatbot.ChatBot):
         if e.text == "$info":
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
+        if e.text startswith("$lookup"):
+
+            user = e.text.replace("$lookup ", "")
+            
+            c.send("Lookup: [[User:" + user + "|User page]] • [[User talk:" + user + "|Talk page]] • [[Special:Contributions/" + user + "|Contributions]]")
+
         if e.text == "$love":
         
             c.send("I love you " + e.user + " ~<3")
-        if e.text == "$source":
-        
-            c.send("My source can be loacted here: https://github.com/DoctorWhooves/Jane")
         if e.text == "$rules":
 
             c.send("Please read the [[Fallout Wiki:Chat#Chat_rules|chat rules]]")
+        if e.text == "$source":
+        
+            c.send("My source can be loacted here: https://github.com/DoctorWhooves/Jane")
 
         """
         Sysop only commands
