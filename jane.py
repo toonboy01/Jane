@@ -73,7 +73,7 @@ class Jane(chatbot.ChatBot):
 
             user = e.text.replace("$lookup ", "")
             
-            c.send("Lookup: [[User:" + user + "|User page]] • [[User talk:" + user + "|Talk page]] • [[Special:Contributions/" + user + "|Contributions]]")
+            c.send("Lookup: [[User:" + user + "|User page]] - [[User talk:" + user + "|Talk page]] - [[Special:Contributions/" + user + "|Contributions]]")
 
         if e.text == "$love":
         
