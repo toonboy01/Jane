@@ -72,9 +72,11 @@ class Jane(chatbot.ChatBot):
         if e.text.startswith("$lmgtfy"):
 
             query = e.text.replace("$lmgtfy ", "")
-            query = query.replace(" ", "+")
+            querystring = query.replace(" ", "+")
 
-            c.send("Let me google that for you: " + query)
+            link = "http://lmgtfy.com/?q=" + querystring
+
+            c.send("Let me google that for you: " + query + "")
         if e.text.startswith("$lookup"):
 
             user = e.text.replace("$lookup ", "")
