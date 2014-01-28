@@ -89,10 +89,9 @@ class Jane(chatbot.ChatBot):
         if e.text.startswith("$rule"):
 
             i = e.text.replace("$rule ", "")
-            i = int(i)
+            i = int(i) - 1
 
             rules = [
-                "Please do not do rule 0.",
                 "Personal attacks, harassment, sexual harassment, insults or bullying.",
                 "Racial bigotry, sexually degrading language, or other hate speech.",
                 "Extreme use of profanity/cursing or directing it towards another user is not permitted.",
@@ -100,6 +99,7 @@ class Jane(chatbot.ChatBot):
                 "Linking to external sources, such as websites, which violate the aforementioned rules. Notably, publicly linking to websites such as Facebook or MySpace that violate personal privacy, is not permitted without prior consent from the user whose privacy might be violated.",
                 "Trolling or general irritation or disruption of other users. This often includes, but is not limited to; excessive usage of capital letters, punctuation marks, deliberate distortions of the English language (such as \"133t\" or \"Dolan\" speak), and excessive usage of languages other than English. Making arrangements to troll or otherwise disrupt another chat room or service is not permitted in our chatroom. This does not prevent you from joining another chatroom, linking another chatroom, or encouraging others to visit if the topic of conversation is likely to be of interest.",
                 "Being a dick. As a guideline, don't go out of your way to irritate others. (And especially do not try to test the admin's and/or chat moderator's patience and/or limits.) Vicious abuse is grounds for sanctions.",
+                "Whining. Users who ask for something from another chat user and are refused it should not stoop to complaining. It is acceptable to be persistent, but in a mature manner.",
                 "Discussion of real world issues and events is generally permitted. However, before raising any of these points or joining a discussion on these you should remember that your fellow chatters may hold strong views in these areas. Where a particular subject appears to be causing distress, offense, or is otherwise disrupting the ability for others to enjoy chat, a moderator at their discretion may direct that a conversation either be closed or moved into private chat. This may be done either by request to a mod, or by the mod's own initiative, when those factors are present. In the event of mods disagreeing to end a discussion, the decision to ends takes precedence unless there are more active mods who disagree with the decision than agree. Moderators should avoid closing discussions outside of a publicly made request when they are involved in the discussion (unless they are the only active mod).",
                 "Spamming. The meaning should be obvious. Don't say the same thing six times because no one is responding to you. Don't keep yammering on about a subject nobody cares about. Meaningless and/or random posts can also be considered spam, alongside disruptive internet memes."
             ]
