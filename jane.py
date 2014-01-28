@@ -91,6 +91,10 @@ class Jane(chatbot.ChatBot):
             i = e.text.replace("$rule ", "")
             i = int(i) - 1
 
+            if i > 9 or i < 0:
+
+                c.send("No rule at this index!")
+
             rules = [
                 "Personal attacks, harassment, sexual harassment, insults or bullying.",
                 "Racial bigotry, sexually degrading language, or other hate speech.",
