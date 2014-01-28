@@ -21,7 +21,6 @@
 
 import tybot
 import chatbot
-import getpass
 import sys
 
 """
@@ -63,7 +62,10 @@ class Jane(chatbot.ChatBot):
         c.send("-ss-")
 
     def on_message(self, c, e):
-        
+
+        """
+        User commands
+        """
         if e.text == "$info":
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
@@ -76,6 +78,10 @@ class Jane(chatbot.ChatBot):
         if e.text == "$rules":
 
             c.send("Please read the [[Fallout Wiki:Chat#Chat_rules|chat rules]]")
+
+        """
+        Sysop only commands
+        """
         if query_user(e.user) == True or e.user == "Lil' Miss Rarity":
         
             if e.text == "$quit":
@@ -88,9 +94,9 @@ Setup
 Gather login information and pass it
 to the required class methods
 """
-username = raw_input("Username: ")
-password = getpass.getpass("Password: ")
-subdomain = raw_input("Subdomain: ")
+username = sys.argv[1]
+password = sys.argv[2]
+subdomain = sys.argv[3]
 
 #Site URL
 wiki = "http://" + subdomain + ".wikia.com"
