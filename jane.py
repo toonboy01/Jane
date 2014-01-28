@@ -69,7 +69,7 @@ class Jane(chatbot.ChatBot):
         if e.text == "$info":
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
-        if e.text.startswith("$lmgtfy"):
+        if e.text.startswith("$lmgtfy "):
 
             query = e.text.replace("$lmgtfy ", "")
             querystring = query.replace(" ", "+")
@@ -77,7 +77,7 @@ class Jane(chatbot.ChatBot):
             link = "http://lmgtfy.com/?q=" + querystring
 
             c.send("Let me google that for you: " + link + "")
-        if e.text.startswith("$lookup"):
+        if e.text.startswith("$lookup "):
 
             user = e.text.replace("$lookup ", "")
             
@@ -86,7 +86,7 @@ class Jane(chatbot.ChatBot):
         if e.text == "$love":
         
             c.send("I love you " + e.user + " ~<3")
-        if e.text.startswith("$rule"):
+        if e.text.startswith("$rule "):
 
             i = e.text.replace("$rule ", "")
             i = int(i) - 1
