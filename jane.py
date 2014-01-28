@@ -69,6 +69,12 @@ class Jane(chatbot.ChatBot):
         if e.text == "$info":
 
             c.send("I am Quality Control running the Jane software package written by [[User:Lil' Miss Rarity|my operator]].")
+        if e.text.startswith("$lmgtfy"):
+
+            query = e.text.replace("$lmgtfy ", "")
+            query = query.replace(" ", "+")
+
+            c.send("Let me google that for you: " + query)
         if e.text.startswith("$lookup"):
 
             user = e.text.replace("$lookup ", "")
