@@ -89,7 +89,8 @@ class Jane(chatbot.ChatBot):
         if e.text.startswith("$rule"):
 
             i = e.text.replace("$rule ", "")
-            i = int(i) - 1
+            i = int(i)
+            i = i - 1
 
             rules = [
                 "Personal attacks, harassment, sexual harassment, insults or bullying.",
